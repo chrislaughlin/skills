@@ -1,0 +1,63 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "elements": [
+    {
+      "id": "title",
+      "type": "text",
+      "x": 250,
+      "y": 30,
+      "text": "Project Timeline",
+      "fontSize": 28,
+      "fontFamily": 5,
+      "strokeColor": "#1f2937"
+    },
+    {
+      "id": "axis",
+      "type": "arrow",
+      "x": 50,
+      "y": 200,
+      "points": [[0, 0], [700, 0]],
+      "strokeColor": "#374151",
+      "strokeWidth": 2,
+      "startArrowhead": "none",
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "session1",
+      "type": "ellipse",
+      "x": 80,
+      "y": 190,
+      "width": 20,
+      "height": 20,
+      "fill": "#dbeafe",
+      "strokeColor": "#1d4ed8",
+      "strokeWidth": 2
+    },
+    {
+      "id": "session1-label",
+      "type": "text",
+      "x": 55,
+      "y": 160,
+      "text": "Session 1",
+      "fontSize": 14,
+      "fontFamily": 5
+    },
+    {
+      "id": "session1-date",
+      "type": "text",
+      "x": 55,
+      "y": 225,
+      "text": "Date",
+      "fontSize": 12,
+      "fontFamily": 5,
+      "strokeColor": "#6b7280"
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#f9fafb",
+    "gridSize": 20
+  },
+  "files": {}
+}
