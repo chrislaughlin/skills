@@ -1,11 +1,11 @@
 ---
 name: project-timeline-generator
-description: Generate project summaries and Excalidraw timelines from Claude, OpenCode, or Cursor sessions. Use when asked to "create project summary", "generate timeline", "session history", "project overview", or "visualize project sessions". Walks through session discovery, filtering, summarization, and timeline visualization.
+description: Generate project summaries and Excalidraw timelines from Claude, Codex, OpenCode, or Cursor sessions. Use when asked to "create project summary", "generate timeline", "session history", "project overview", or "visualize project sessions". Walks through session discovery, filtering, summarization, and timeline visualization.
 ---
 
 # Project Timeline Generator
 
-Generates project summaries and Excalidraw timeline diagrams from agent sessions (Claude Code, OpenCode, Cursor).
+Generates project summaries and Excalidraw timeline diagrams from agent sessions (Claude, Codex, OpenCode, Cursor).
 
 ## When to Use
 
@@ -18,23 +18,28 @@ Triggered by requests like:
 
 ## Step 1: Discover Sessions
 
-Scan these common locations for session files:
+Scan in order: Claude → Codex → OpenCode (check in this order).
 
-| Agent | Typical Locations |
-|-------|------------------|
-| Claude Code | `~/.claude/projects/<project-id>/sessions/*.json` |
-| OpenCode | `~/.opencode/sessions/`, `./.opencode/sessions/` |
-| Cursor | `.cursor/rules/`, `.cursor/history/` |
-
-Use glob to find session files:
+### Claude sessions
 ```bash
-# Claude sessions
 glob(pattern="**/*session*.json", path="~/.claude/projects")
+```
 
-# OpenCode sessions
+### Codex sessions
+```bash
+find ~/.codex/sessions -name "*.jsonl" | while read file; do
+  head -n 20 "$file" | grep -q "\"cwd\": \"$(pwd)\"" && echo "$file"
+done
+```
+
+### OpenCode sessions
+```bash
 glob(pattern="**/*.md", path="~/.opencode/sessions")
+glob(pattern="**/*.md", path="./.opencode/sessions")
+```
 
-# Cursor sessions
+### Cursor sessions
+```bash
 glob(pattern="**/*.md", path=".cursor")
 ```
 
