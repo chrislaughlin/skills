@@ -1,12 +1,12 @@
-# ChrisLaughlin Skills Toolset
+# Chris Laughlin Skills Toolset
 
-Personal agent skillset extending opencode with specialized workflows for project management and documentation.
+Personal agent skillset.
 
 ## Available Skills
 
 | Skill | Description | Trigger Keywords |
 |-------|-------------|---------------|
-| [project-timeline-generator](./project-timeline-generator/) | Generate project summaries and Excalidraw timelines from Claude, OpenCode, or Cursor sessions | project summary, generate timeline, session history, project overview, visualize project sessions |
+| [project-timeline-generator](./project-timeline-generator/) | Generate project summaries and Excalidraw timelines from Claude, Codex, OpenCode, or Cursor sessions | project summary, generate timeline, session history, project overview, visualize project sessions |
 
 ## Usage
 
