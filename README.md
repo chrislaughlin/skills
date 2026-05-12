@@ -7,6 +7,7 @@ Personal agent skillset.
 | Skill | Description | Trigger Keywords |
 |-------|-------------|---------------|
 | [project-timeline-generator](./project-timeline-generator/) | Generate project summaries and Excalidraw timelines from Claude, Codex, OpenCode, or Cursor sessions | project summary, generate timeline, session history, project overview, visualize project sessions |
+| [prompt-starter-all-in](./prompt-starter-all-in/) | Comprehensive operating guide for coding and repository tasks | prompt starter, search, autonomy, implementation, planning, frontend, final reporting |
 
 ## Usage
 
@@ -28,11 +29,15 @@ To generate a project timeline:
 ```
 skills/
 ├── README.md
-└── project-timeline-generator/
+├── project-timeline-generator/
+│   ├── SKILL.md
+│   ├── references/
+│   │   ├── session-formats.md
+│   │   └── excalidraw-timeline.md
+│   └── templates/
+│       └── timeline-template.json
+└── prompt-starter-all-in/
     ├── SKILL.md
-    ├── references/
-    │   ├── session-formats.md
-    │   └── excalidraw-timeline.md
-    └── templates/
-        └── timeline-template.json
+    └── agents/
+        └── openai.yaml
 ```
