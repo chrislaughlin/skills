@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prompt Starter All-In"
+  short_description: "Full-stack coding workflow guardrails"
+  default_prompt: "Use $prompt-starter-all-in to guide this coding task end to end."
