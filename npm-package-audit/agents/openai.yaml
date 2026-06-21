@@ -1,0 +1,4 @@
+interface:
+  display_name: "NPM Package Audit"
+  short_description: "Assess npm package install risk quickly"
+  default_prompt: "Use $npm-package-audit to audit react before I install it."
