@@ -1,0 +1,4 @@
+interface:
+  display_name: "Record App Demo — HyperFrames"
+  short_description: "Record verified app tutorials with HyperFrames"
+  default_prompt: "Use $record-app-demo-hyperframes to turn my app URL and workflow instructions into a verified tutorial video."

@@ -1,0 +1,17 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile,mkdtemp,writeFile,rm,access} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
+import {join,resolve} from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {spawnSync} from 'node:child_process';
+import {validateJourney,escapeHtml} from '../scripts/contract.mjs';
+const root=fileURLToPath(new URL('../',import.meta.url));
+const example=JSON.parse(await readFile(join(root,'examples/todomvc/journey.json'),'utf8'));
+test('rejects an unapproved navigation origin',()=>{const j=structuredClone(example);j.url='https://unapproved.example/';assert.throws(()=>validateJourney(j),/origin/);});
+test('every chapter needs an observable expected result',()=>{const j=structuredClone(example);j.chapters[0].assertions=[];assert.throws(()=>validateJourney(j),/assertions/);});
+test('rejects arbitrary script actions',()=>{const j=structuredClone(example);j.chapters[0].actions=[{type:'evaluate',script:'fabricateSuccess()'}];assert.throws(()=>validateJourney(j),/Unsupported action/);});
+test('instructional text remains text in HTML',()=>assert.equal(escapeHtml('<script>"&'),'&lt;script&gt;&quot;&amp;'));
+test('rejects contradictory assertion fields',()=>{const j=structuredClone(example);j.chapters[0].assertions[0].visible=false;assert.throws(()=>validateJourney(j),/exactly one/);});
+test('failed capture cannot create a successful tutorial',async()=>{const dir=await mkdtemp(join(tmpdir(),'demo-failure-test-'));try{await writeFile(join(dir,'report.json'),await readFile(join(root,'tests/fixtures/failed-report.json')));await writeFile(join(dir,'journey.json'),JSON.stringify(example));const out=join(dir,'must-not-exist');const result=spawnSync(process.execPath,[join(root,'scripts/compose.mjs'),dir,out],{encoding:'utf8'});assert.notEqual(result.status,0);assert.match(result.stderr,/unverified journey/);await assert.rejects(access(out));}finally{await rm(dir,{recursive:true,force:true});}});
+test('packaged capture composes from another working directory',async()=>{const dir=await mkdtemp(join(tmpdir(),'demo-portable-test-'));try{const out=join(dir,'project');const result=spawnSync(process.execPath,[join(root,'scripts/compose.mjs'),join(root,'examples/todomvc/capture'),out],{cwd:dir,encoding:'utf8'});assert.equal(result.status,0,result.stderr);const delivery=JSON.parse(await readFile(join(out,'delivery.json'),'utf8'));assert.equal(delivery.duration,44);assert.equal(delivery.assertionsPassed,10);const pkg=JSON.parse(await readFile(join(out,'package.json'),'utf8'));assert.ok(pkg.scripts.render);assert.ok((await readFile(join(out,'capture-report.json'),'utf8')).includes('passed'));}finally{await rm(dir,{recursive:true,force:true});}});

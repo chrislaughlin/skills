@@ -1,0 +1,4 @@
+interface:
+  display_name: "Record App Demo — Remotion"
+  short_description: "Record verified app tutorials with Remotion"
+  default_prompt: "Use $record-app-demo-remotion to turn my app URL and workflow instructions into a verified tutorial video."

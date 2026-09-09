@@ -9,6 +9,8 @@ Personal agent skillset.
 | [npm-package-audit](./npm-package-audit/) | Audit npm packages before installation with supply-chain, provenance, maintainer, dependency, CI, code-quality, and vulnerability checks | npm audit, package audit, evaluate package, vet package, inspect package, review package, install npm package |
 | [project-timeline-generator](./project-timeline-generator/) | Generate project summaries and Excalidraw timelines from Claude, Codex, OpenCode, or Cursor sessions | project summary, generate timeline, session history, project overview, visualize project sessions |
 | [prompt-starter-all-in](./prompt-starter-all-in/) | Comprehensive operating guide for coding and repository tasks | prompt starter, search, autonomy, implementation, planning, frontend, final reporting |
+| [record-app-demo-hyperframes](./record-app-demo-hyperframes/) | Turn ordinary instructions for a running web app into a verified browser recording and HyperFrames tutorial MP4; includes scripts, pinned dependencies, examples and tests | HyperFrames app demo, record product walkthrough, verified UI tutorial |
+| [record-app-demo-remotion](./record-app-demo-remotion/) | Turn ordinary instructions for a running web app into a verified browser recording and native Remotion tutorial MP4; includes scripts, pinned dependencies, examples and tests | Remotion app demo, record product walkthrough, verified UI tutorial |
 
 ## Usage
 
@@ -41,8 +43,35 @@ skills/
 │   │   └── excalidraw-timeline.md
 │   └── templates/
 │       └── timeline-template.json
+├── record-app-demo-hyperframes/
+│   ├── SKILL.md
+│   ├── scripts/
+│   ├── references/
+│   ├── examples/
+│   └── tests/
+├── record-app-demo-remotion/
+│   ├── SKILL.md
+│   ├── scripts/
+│   ├── references/
+│   ├── examples/
+│   └── tests/
 └── prompt-starter-all-in/
     ├── SKILL.md
     └── agents/
         └── openai.yaml
 ```
+
+## Application demo skills
+
+Choose the renderer you want. Both skills inspect real controls, record browser interactions, verify the requested results, and render a tutorial from the frozen recording. Each folder is complete and works independently of the other.
+
+- [HyperFrames workflow and installation](./record-app-demo-hyperframes/SKILL.md) · [example video](./record-app-demo-hyperframes/examples/todomvc/results/demo.mp4) · [preview](./record-app-demo-hyperframes/examples/todomvc/results/preview.jpg)
+- [Remotion workflow and installation](./record-app-demo-remotion/SKILL.md) · [example video](./record-app-demo-remotion/examples/todomvc/results/demo.mp4) · [preview](./record-app-demo-remotion/examples/todomvc/results/preview.jpg)
+
+Example request:
+
+> Use $record-app-demo-hyperframes to make a short tutorial of https://todomvc.com/examples/react/dist/. Add three tasks, rename one, complete one, show Active and Completed, then clear completed tasks. Record the real UI and deliver an MP4 with clear on-screen instructions.
+
+Use `$record-app-demo-remotion` for the equivalent Remotion workflow. Copy the entire selected skill folder into your agent's skills directory, then follow its SKILL.md setup. Node 22+, FFmpeg/ffprobe and a Playwright Chromium browser are required. Runtime dependencies and generated project dependencies are pinned in lockfiles or explicit CLI versions.
+
+The included validation covers six operations on the hosted TodoMVC React and Vue examples and a 44-second, 1080p output from each renderer. It also found and blocked an unsupported persistence claim. This is a working browser-demo foundation; authentication, unrelated applications, complex editors and unattended production services require further validation. See each skill's `references/todomvc-validation.md` for the measured comparison and limits.

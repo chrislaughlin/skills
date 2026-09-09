@@ -1,0 +1,9 @@
+{
+  "status": "failed",
+  "assertions": [
+    {
+      "pass": false
+    }
+  ],
+  "error": "Requested result did not occur."
+}
