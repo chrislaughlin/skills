@@ -4,7 +4,11 @@ Keep the distinction between three checks: the application did the requested wor
 
 A useful acceptance matrix covers action assertions, initial/final state, absence of application runtime errors, video resolution/duration/codec, full decoding, readable instruction text, and cursor/click synchronization. Preserve failed takes and refuse to render a failed journey as a successful tutorial.
 
-For a new application inspect authentication, data setup, irreversible effects, navigation, dynamic controls and output artifacts. Prefer a dedicated demo account and seeded workspace when needed. An agent-assisted skill can author a tailored journey from natural language; the deterministic runner is not an unrestricted natural-language parser or a universal application driver.
+For a new application inspect authentication, data setup, irreversible effects, navigation, frames, sticky overlays, dynamic controls and output artifacts. Prefer a dedicated demo account and seeded workspace when needed. An agent-assisted skill can author a tailored journey from natural language; the deterministic runner is not an unrestricted natural-language parser or a universal application driver.
+
+Rehearsal is an execution-speed tool, not an isolation boundary. Enable it only when repeating the whole journey is safe. It should catch ambiguous locators, failed assertions, unsafe target framing and unrelated runtime-error noise before the timed recording. A failed rehearsal is evidence; fix it instead of starting a full take.
+
+Page errors remain failures unless a journey lists a narrow, verified substring in `ignoredPageErrorPatterns`. The report preserves ignored errors separately. A successful widget flow can coexist with an unrelated map or analytics error, but that conclusion needs direct evidence from the requested state assertions.
 
 Embed the same redistributable font bytes in both backends; a shared system font name does not ensure the same resolved face. The demo uses bundled Inter 400/500 under Demo Sans.
 

@@ -10,7 +10,7 @@ Personal agent skillset.
 | [project-timeline-generator](./project-timeline-generator/) | Generate project summaries and Excalidraw timelines from Claude, Codex, OpenCode, or Cursor sessions | project summary, generate timeline, session history, project overview, visualize project sessions |
 | [prompt-starter-all-in](./prompt-starter-all-in/) | Comprehensive operating guide for coding and repository tasks | prompt starter, search, autonomy, implementation, planning, frontend, final reporting |
 | [record-app-demo-hyperframes](./record-app-demo-hyperframes/) | Turn ordinary instructions for a running web app into a verified browser recording and HyperFrames tutorial MP4; includes scripts, pinned dependencies, examples and tests | HyperFrames app demo, record product walkthrough, verified UI tutorial |
-| [record-app-demo-remotion](./record-app-demo-remotion/) | Turn ordinary instructions for a running web app into a verified browser recording and native Remotion tutorial MP4; includes scripts, pinned dependencies, examples and tests | Remotion app demo, record product walkthrough, verified UI tutorial |
+| [record-app-demo-remotion](./record-app-demo-remotion/) | Turn ordinary instructions for a running web app into a verified Remotion tutorial MP4, with iframe targets, fast rehearsal, one-command delivery and review sheets | Remotion app demo, record product walkthrough, verified UI tutorial |
 
 ## Usage
 
