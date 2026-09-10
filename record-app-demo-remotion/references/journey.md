@@ -12,6 +12,10 @@ Use target `safeArea` margins such as `{"top": 96, "bottom": 32}` when fixed UI 
 
 An assertion includes a target and exactly one of `count`, exact `text`, exact `value`, `checked`, `visible`. Assertions retry up to seven seconds and log expected versus observed values. Chapter completion is not inferred from a successful click.
 
+Do not assert dynamic defaults with exact `text`. Live widgets can change their initial values with time of day, locale or data (for example a booking widget defaulting to the next available timeslot), so an exact-text assertion that passes in the morning can fail in the evening while the application behaves correctly. Assert structural presence (`visible`, `count`) for defaults and reserve exact `text` for values the journey itself set.
+
+Avoid bare `exactText` targets on widgets that render duplicate or hidden copies of the same string (a header, an input and a dropdown option showing one value, plus hidden confirmation nodes). Scope the target with `css` plus the `text` filter — for example `{"css": "p.timeslot-text", "text": "19:30"}` — so the locator resolves to the single visible, enabled control. Inspect the live DOM in the runner's locale/timezone before choosing locators; local browser defaults such as en-US can render different strings from the runner's en-GB context.
+
 `rehearsalSafe: true` permits `--rehearse`. Rehearsal uses the same live page, actions and assertions but skips video recording, pointer animation, typing cadence and editorial holds. It is a fast authoring check, not a dry run: do not set it when replaying any action could create or change external state.
 
 `ignoredPageErrorPatterns` is an optional list of specific substrings for known page errors already shown to be unrelated to the demonstrated workflow. Matching errors remain in `ignoredPageErrors`; all other page errors fail the journey. Do not use broad patterns to conceal application failures.
