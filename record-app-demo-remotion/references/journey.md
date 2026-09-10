@@ -16,7 +16,7 @@ Do not assert dynamic defaults with exact `text`. Live widgets can change their 
 
 Avoid bare `exactText` targets on widgets that render duplicate or hidden copies of the same string (a header, an input and a dropdown option showing one value, plus hidden confirmation nodes). Scope the target with `css` plus the `text` filter — for example `{"css": "p.timeslot-text", "text": "19:30"}` — so the locator resolves to the single visible, enabled control. Inspect the live DOM in the runner's locale/timezone before choosing locators; local browser defaults such as en-US can render different strings from the runner's en-GB context.
 
-`rehearsalSafe: true` permits `--rehearse`. Rehearsal uses the same live page, actions and assertions but skips video recording, pointer animation, typing cadence and editorial holds. It is a fast authoring check, not a dry run: do not set it when replaying any action could create or change external state.
+`rehearsalSafe: true` permits `--rehearse`. Rehearsal uses the same live page, actions and assertions but skips video recording, pointer animation, typing cadence and editorial holds. It is a fast authoring check, not a dry run: do not set it when replaying any action could create or change external state. Budget one rehearsal per journey version: batch all fixes from a failed rehearsal into a single edit before re-running, and never rehearse the same unchanged journey twice.
 
 `ignoredPageErrorPatterns` is an optional list of specific substrings for known page errors already shown to be unrelated to the demonstrated workflow. Matching errors remain in `ignoredPageErrors`; all other page errors fail the journey. Do not use broad patterns to conceal application failures.
 

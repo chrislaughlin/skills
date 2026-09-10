@@ -6,7 +6,9 @@ A useful acceptance matrix covers action assertions, initial/final state, absenc
 
 For a new application inspect authentication, data setup, irreversible effects, navigation, frames, sticky overlays, dynamic controls and output artifacts. Prefer a dedicated demo account and seeded workspace when needed. An agent-assisted skill can author a tailored journey from natural language; the deterministic runner is not an unrestricted natural-language parser or a universal application driver.
 
-Rehearsal is an execution-speed tool, not an isolation boundary. Enable it only when repeating the whole journey is safe. It should catch ambiguous locators, failed assertions, unsafe target framing and unrelated runtime-error noise before the timed recording. A failed rehearsal is evidence; fix it instead of starting a full take.
+Rehearsal is an execution-speed tool, not an isolation boundary. Enable it only when repeating the whole journey is safe. It should catch ambiguous locators, failed assertions, unsafe target framing and unrelated runtime-error noise before the timed recording. A failed rehearsal is evidence; fix it instead of starting a full take. Do not iterate through repeated rehearsals: collect every finding from one failed rehearsal into a single journey edit, then re-run once.
+
+Treat every run that drives the application as expensive: probes, rehearsals and takes all execute real actions, so a "quick check" that drives the app costs the same goodwill as a rehearsal. Batch checks into the single inspection pass instead of looping. When the browser belongs to the human (an attached session, their profile), announce before driving it, keep focus changes minimal, restore their active tab when done, close tabs you created, and never retry in a loop without asking. After two consecutive failed runs of any kind, stop and report.
 
 Page errors remain failures unless a journey lists a narrow, verified substring in `ignoredPageErrorPatterns`. The report preserves ignored errors separately. A successful widget flow can coexist with an unrelated map or analytics error, but that conclusion needs direct evidence from the requested state assertions.
 
