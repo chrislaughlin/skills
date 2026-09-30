@@ -1,0 +1,43 @@
+{
+  "skill_name": "record-app-demo-agent-browser-remotion",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Use agent-browser and Remotion to record https://todomvc.com/examples/react/dist/. Add three tasks, rename one, complete one, use Active and Completed, then clear completed tasks. Deliver a real MP4 with instructions.",
+      "expected_output": "Verified native-cursor recording and rendered 1080p/30fps MP4, editable project, chapter and click sheets; at most two rehearsals.",
+      "files": [],
+      "assertions": [
+        "App outcomes pass ten assertions",
+        "Native source and final output are 30 fps",
+        "Final MP4 fully decodes at 1920x1080",
+        "Only one cursor is present",
+        "One safe rehearsal is used"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Record the local Project workspace using credentials from the supplied env file. Name a project Launch and save it. Exclude login footage, save auth state privately, and verify it can be reused.",
+      "expected_output": "Successful authenticated recording, passing saved-state reuse and no credentials in delivered artifacts.",
+      "files": [],
+      "assertions": [
+        "Env-file form login succeeds before recording",
+        "Saved state opens the authenticated app in a fresh session",
+        "Credentials are absent from output JSON",
+        "Final MP4 fully decodes and excludes login"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Record opening a workspace. If several Open workspace buttons match, ask which one. I choose Team. Keep the same session and resume from that checkpoint.",
+      "expected_output": "A needs-human checkpoint before any ambiguous click; explicit resolution; two synchronized segments joined without human waiting or duplicated actions.",
+      "files": [],
+      "assertions": [
+        "Ambiguous target pauses before any click",
+        "Resolution explicitly identifies the Team control",
+        "Resume keeps the original tab and completed steps",
+        "Two synchronized segments exclude the human wait",
+        "Final MP4 fully decodes"
+      ]
+    }
+  ]
+}

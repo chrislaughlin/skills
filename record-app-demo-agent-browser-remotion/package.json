@@ -1,0 +1,23 @@
+{
+  "name": "record-app-demo-agent-browser-remotion",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "capture": "node scripts/capture.mjs",
+    "rehearse": "node scripts/capture.mjs --rehearse",
+    "resume": "node scripts/capture.mjs --resume",
+    "compose": "node scripts/compose.mjs",
+    "deliver": "node scripts/deliver.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:integration": "node tests/integration.mjs"
+  },
+  "dependencies": {
+    "@fontsource/inter": "5.3.0",
+    "gsap": "3.14.2",
+    "agent-browser": "0.38.1"
+  },
+  "engines": {
+    "node": ">=22.9"
+  }
+}

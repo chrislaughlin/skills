@@ -1,0 +1,252 @@
+{
+  "version": 1,
+  "title": "TodoMVC",
+  "url": "https://todomvc.com/examples/react/dist/",
+  "allowedOrigins": [
+    "https://todomvc.com"
+  ],
+  "viewport": {
+    "width": 880,
+    "height": 660
+  },
+  "ready": {
+    "css": ".new-todo"
+  },
+  "initialAssertions": [
+    {
+      "target": {
+        "css": ".todo-list li"
+      },
+      "count": 0
+    }
+  ],
+  "rehearsalSafe": true,
+  "introSeconds": 3,
+  "outroSeconds": 3,
+  "chapters": [
+    {
+      "title": "Make room for what matters.",
+      "instruction": "Type a task. Press Enter. Repeat.",
+      "label": "Capture your tasks",
+      "minSeconds": 10,
+      "actions": [
+        {
+          "type": "type",
+          "target": {
+            "css": ".new-todo"
+          },
+          "text": "Plan the launch"
+        },
+        {
+          "type": "press",
+          "target": {
+            "css": ".new-todo"
+          },
+          "key": "Enter"
+        },
+        {
+          "type": "type",
+          "target": {
+            "css": ".new-todo"
+          },
+          "text": "Write the demo script"
+        },
+        {
+          "type": "press",
+          "target": {
+            "css": ".new-todo"
+          },
+          "key": "Enter"
+        },
+        {
+          "type": "type",
+          "target": {
+            "css": ".new-todo"
+          },
+          "text": "Share with the team"
+        },
+        {
+          "type": "press",
+          "target": {
+            "css": ".new-todo"
+          },
+          "key": "Enter"
+        }
+      ],
+      "assertions": [
+        {
+          "target": {
+            "css": ".todo-list li"
+          },
+          "count": 3
+        }
+      ]
+    },
+    {
+      "title": "Plans change. Edit in place.",
+      "instruction": "Double-click a task, rename it, then press Enter.",
+      "label": "Refine the plan",
+      "minSeconds": 7,
+      "actions": [
+        {
+          "type": "dblclick",
+          "target": {
+            "css": ".todo-list label",
+            "text": "Write the demo script"
+          }
+        },
+        {
+          "type": "type",
+          "target": {
+            "css": ".todo-list .edit"
+          },
+          "text": "Record the product demo"
+        },
+        {
+          "type": "press",
+          "target": {
+            "css": ".todo-list .edit"
+          },
+          "key": "Enter"
+        }
+      ],
+      "assertions": [
+        {
+          "target": {
+            "css": ".todo-list label",
+            "text": "Record the product demo"
+          },
+          "count": 1
+        }
+      ]
+    },
+    {
+      "title": "One down. Keep going.",
+      "instruction": "Click the circle beside a finished task.",
+      "label": "Mark it complete",
+      "minSeconds": 5,
+      "actions": [
+        {
+          "type": "click",
+          "target": {
+            "css": ".todo-list li",
+            "text": "Plan the launch",
+            "child": "label"
+          },
+          "clickOffset": {
+            "x": 20,
+            "y": 28
+          }
+        }
+      ],
+      "assertions": [
+        {
+          "target": {
+            "css": ".todo-list li.completed"
+          },
+          "count": 1
+        }
+      ]
+    },
+    {
+      "title": "Focus on what\u2019s next.",
+      "instruction": "Choose Active to see unfinished tasks.",
+      "label": "Find the next task",
+      "minSeconds": 5,
+      "actions": [
+        {
+          "type": "click",
+          "target": {
+            "role": "link",
+            "name": "Active"
+          }
+        }
+      ],
+      "assertions": [
+        {
+          "target": {
+            "css": ".todo-list li"
+          },
+          "count": 2
+        },
+        {
+          "target": {
+            "css": ".todo-list li.completed"
+          },
+          "count": 0
+        }
+      ]
+    },
+    {
+      "title": "See how far you\u2019ve come.",
+      "instruction": "Choose Completed to review finished work.",
+      "label": "Review your progress",
+      "minSeconds": 5,
+      "actions": [
+        {
+          "type": "click",
+          "target": {
+            "role": "link",
+            "name": "Completed"
+          }
+        }
+      ],
+      "assertions": [
+        {
+          "target": {
+            "css": ".todo-list li"
+          },
+          "count": 1
+        },
+        {
+          "target": {
+            "css": ".todo-list li.completed"
+          },
+          "count": 1
+        }
+      ]
+    },
+    {
+      "title": "Clear the finished work.",
+      "instruction": "Return to All, then choose Clear completed.",
+      "label": "Tidy the list",
+      "minSeconds": 6,
+      "actions": [
+        {
+          "type": "click",
+          "target": {
+            "role": "link",
+            "name": "All"
+          }
+        },
+        {
+          "type": "click",
+          "target": {
+            "css": ".clear-completed"
+          }
+        }
+      ],
+      "assertions": [
+        {
+          "target": {
+            "css": ".todo-list li"
+          },
+          "count": 2
+        },
+        {
+          "target": {
+            "css": ".todo-list li.completed"
+          },
+          "count": 0
+        }
+      ]
+    }
+  ],
+  "presentation": {
+    "introTitle": "A clearer list. A clearer day.",
+    "introInstruction": "Capture your tasks, keep them up to date, and focus on what\u2019s next.",
+    "outroTitle": "Ready for what\u2019s next.",
+    "outroInstruction": "Try it yourself at todomvc.com",
+    "footer": "A little structure for your everyday work."
+  }
+}

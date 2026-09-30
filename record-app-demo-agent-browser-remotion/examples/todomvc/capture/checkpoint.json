@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "status": "passed",
+  "journeyHash": "517a031d912f0f5398668cd1012ec73be147fd589cf2be187947fc6c7c98cccd",
+  "chapter": 6,
+  "action": 0,
+  "authenticated": true,
+  "targetId": "B28BB5237D312325095DF7C1DAE23178",
+  "pending": null,
+  "targetOverrides": {}
+}

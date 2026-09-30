@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "segments": [
+    {
+      "index": 1,
+      "raw": "raw/segment-1.mp4",
+      "start": 0,
+      "status": "verified",
+      "synchronized": true,
+      "elapsed": 23.9993999004364,
+      "sourceOffset": 0.7,
+      "duration": 23.966666666666665,
+      "file": "segments/segment-1.mp4",
+      "sourceFps": 30
+    }
+  ]
+}

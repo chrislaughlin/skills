@@ -1,0 +1,4 @@
+interface:
+  display_name: "Record App Demo — Agent-browser + Remotion"
+  short_description: "Record app workflows with agent-browser and Remotion"
+  default_prompt: "Use $record-app-demo-agent-browser-remotion to turn my app URL and human-readable workflow instructions into a real, verified tutorial video. Use agent-browser for the UI and Remotion for rendering; ask me about ambiguous controls."

@@ -1,0 +1,487 @@
+{
+  "version": 2,
+  "mode": "capture",
+  "status": "passed",
+  "session": "demo-test-1790723466961-todos",
+  "browserSettings": {
+    "headed": false
+  },
+  "url": "https://todomvc.com/examples/react/dist/",
+  "viewport": {
+    "width": 880,
+    "height": 660
+  },
+  "startedAt": "2026-09-29T23:11:17.771Z",
+  "chapters": [
+    {
+      "title": "Make room for what matters.",
+      "instruction": "Type a task. Press Enter. Repeat.",
+      "label": "Capture your tasks",
+      "minSeconds": 3,
+      "actions": [
+        {
+          "type": "type",
+          "target": {
+            "css": ".new-todo"
+          },
+          "text": "Plan the launch",
+          "start": 1.0935001373291016,
+          "issuedAt": 1.7841999530792236,
+          "end": 1.9410998821258545
+        },
+        {
+          "type": "press",
+          "target": {
+            "css": ".new-todo"
+          },
+          "key": "Enter",
+          "start": 2.1633999347686768,
+          "issuedAt": 2.441500186920166,
+          "end": 2.6113998889923096
+        },
+        {
+          "type": "type",
+          "target": {
+            "css": ".new-todo"
+          },
+          "text": "Write the demo script",
+          "start": 2.8188998699188232,
+          "issuedAt": 3.4807000160217285,
+          "end": 3.636899948120117
+        },
+        {
+          "type": "press",
+          "target": {
+            "css": ".new-todo"
+          },
+          "key": "Enter",
+          "start": 3.8594000339508057,
+          "issuedAt": 4.14520001411438,
+          "end": 4.296099901199341
+        },
+        {
+          "type": "type",
+          "target": {
+            "css": ".new-todo"
+          },
+          "text": "Share with the team",
+          "start": 4.519700050354004,
+          "issuedAt": 5.233999967575073,
+          "end": 5.407900094985962
+        },
+        {
+          "type": "press",
+          "target": {
+            "css": ".new-todo"
+          },
+          "key": "Enter",
+          "start": 5.6310999393463135,
+          "issuedAt": 5.921299934387207,
+          "end": 6.073000192642212
+        }
+      ],
+      "assertions": [
+        {
+          "target": {
+            "css": ".todo-list li"
+          },
+          "count": 3
+        }
+      ],
+      "start": 1.0606000423431396,
+      "verifiedAt": 6.38100004196167,
+      "end": 7.029799938201904
+    },
+    {
+      "title": "Plans change. Edit in place.",
+      "instruction": "Double-click a task, rename it, then press Enter.",
+      "label": "Refine the plan",
+      "minSeconds": 3,
+      "actions": [
+        {
+          "type": "dblclick",
+          "target": {
+            "css": ".todo-list label",
+            "text": "Write the demo script"
+          },
+          "start": 7.08870005607605,
+          "issuedAt": 7.743099927902222,
+          "end": 7.8785998821258545
+        },
+        {
+          "type": "type",
+          "target": {
+            "css": ".todo-list .edit"
+          },
+          "text": "Record the product demo",
+          "start": 8.094799995422363,
+          "issuedAt": 8.779299974441528,
+          "end": 8.939500093460083
+        },
+        {
+          "type": "press",
+          "target": {
+            "css": ".todo-list .edit"
+          },
+          "key": "Enter",
+          "start": 9.163000106811523,
+          "issuedAt": 9.438199996948242,
+          "end": 9.622599840164185
+        }
+      ],
+      "assertions": [
+        {
+          "target": {
+            "css": ".todo-list label",
+            "text": "Record the product demo"
+          },
+          "count": 1
+        }
+      ],
+      "start": 7.062399864196777,
+      "verifiedAt": 9.978799819946289,
+      "end": 10.60920000076294
+    },
+    {
+      "title": "One down. Keep going.",
+      "instruction": "Click the circle beside a finished task.",
+      "label": "Mark it complete",
+      "minSeconds": 3,
+      "actions": [
+        {
+          "type": "click",
+          "target": {
+            "css": ".todo-list li",
+            "text": "Plan the launch",
+            "child": "label"
+          },
+          "clickOffset": {
+            "x": 20,
+            "y": 28
+          },
+          "start": 10.668299913406372,
+          "issuedAt": 11.378400087356567,
+          "end": 11.56410002708435
+        }
+      ],
+      "assertions": [
+        {
+          "target": {
+            "css": ".todo-list li.completed"
+          },
+          "count": 1
+        }
+      ],
+      "start": 10.640200138092041,
+      "verifiedAt": 11.921599864959717,
+      "end": 13.676299810409546
+    },
+    {
+      "title": "Focus on what’s next.",
+      "instruction": "Choose Active to see unfinished tasks.",
+      "label": "Find the next task",
+      "minSeconds": 3,
+      "actions": [
+        {
+          "type": "click",
+          "target": {
+            "role": "link",
+            "name": "Active"
+          },
+          "start": 13.737799882888794,
+          "issuedAt": 14.43779993057251,
+          "end": 14.583899974822998
+        }
+      ],
+      "assertions": [
+        {
+          "target": {
+            "css": ".todo-list li"
+          },
+          "count": 2
+        },
+        {
+          "target": {
+            "css": ".todo-list li.completed"
+          },
+          "count": 0
+        }
+      ],
+      "start": 13.708899974822998,
+      "verifiedAt": 14.995799779891968,
+      "end": 16.738399982452393
+    },
+    {
+      "title": "See how far you’ve come.",
+      "instruction": "Choose Completed to review finished work.",
+      "label": "Review your progress",
+      "minSeconds": 3,
+      "actions": [
+        {
+          "type": "click",
+          "target": {
+            "role": "link",
+            "name": "Completed"
+          },
+          "start": 16.794299840927124,
+          "issuedAt": 17.510799884796143,
+          "end": 17.67799997329712
+        }
+      ],
+      "assertions": [
+        {
+          "target": {
+            "css": ".todo-list li"
+          },
+          "count": 1
+        },
+        {
+          "target": {
+            "css": ".todo-list li.completed"
+          },
+          "count": 1
+        }
+      ],
+      "start": 16.766900062561035,
+      "verifiedAt": 18.182199954986572,
+      "end": 19.79550004005432
+    },
+    {
+      "title": "Clear the finished work.",
+      "instruction": "Return to All, then choose Clear completed.",
+      "label": "Tidy the list",
+      "minSeconds": 3,
+      "actions": [
+        {
+          "type": "click",
+          "target": {
+            "role": "link",
+            "name": "All"
+          },
+          "start": 19.85700011253357,
+          "issuedAt": 20.576299905776978,
+          "end": 20.749200105667114
+        },
+        {
+          "type": "click",
+          "target": {
+            "css": ".clear-completed"
+          },
+          "start": 20.961400032043457,
+          "issuedAt": 21.67459988594055,
+          "end": 21.81789994239807
+        }
+      ],
+      "assertions": [
+        {
+          "target": {
+            "css": ".todo-list li"
+          },
+          "count": 2
+        },
+        {
+          "target": {
+            "css": ".todo-list li.completed"
+          },
+          "count": 0
+        }
+      ],
+      "start": 19.828099966049194,
+      "verifiedAt": 22.208500146865845,
+      "end": 22.86329984664917
+    }
+  ],
+  "assertions": [
+    {
+      "at": null,
+      "expected": {
+        "target": {
+          "css": ".todo-list li"
+        },
+        "count": 0
+      },
+      "actual": 0,
+      "pass": true
+    },
+    {
+      "at": 6.3572998046875,
+      "expected": {
+        "target": {
+          "css": ".todo-list li"
+        },
+        "count": 3
+      },
+      "actual": 3,
+      "pass": true
+    },
+    {
+      "at": 9.944200038909912,
+      "expected": {
+        "target": {
+          "css": ".todo-list label",
+          "text": "Record the product demo"
+        },
+        "count": 1
+      },
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "at": 11.89300012588501,
+      "expected": {
+        "target": {
+          "css": ".todo-list li.completed"
+        },
+        "count": 1
+      },
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "at": 14.86679983139038,
+      "expected": {
+        "target": {
+          "css": ".todo-list li"
+        },
+        "count": 2
+      },
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "at": 14.964200019836426,
+      "expected": {
+        "target": {
+          "css": ".todo-list li.completed"
+        },
+        "count": 0
+      },
+      "actual": 0,
+      "pass": true
+    },
+    {
+      "at": 18.009700059890747,
+      "expected": {
+        "target": {
+          "css": ".todo-list li"
+        },
+        "count": 1
+      },
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "at": 18.15559983253479,
+      "expected": {
+        "target": {
+          "css": ".todo-list li.completed"
+        },
+        "count": 1
+      },
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "at": 22.0935001373291,
+      "expected": {
+        "target": {
+          "css": ".todo-list li"
+        },
+        "count": 2
+      },
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "at": 22.180999994277954,
+      "expected": {
+        "target": {
+          "css": ".todo-list li.completed"
+        },
+        "count": 0
+      },
+      "actual": 0,
+      "pass": true
+    }
+  ],
+  "pointer": [
+    {
+      "type": "click",
+      "start": 7.743099927902222,
+      "at": {
+        "x": 440,
+        "y": 285
+      },
+      "segment": 1
+    },
+    {
+      "type": "click",
+      "start": 11.378400087356567,
+      "at": {
+        "x": 185,
+        "y": 224
+      },
+      "segment": 1
+    },
+    {
+      "type": "click",
+      "start": 14.43779993057251,
+      "at": {
+        "x": 412,
+        "y": 394
+      },
+      "segment": 1
+    },
+    {
+      "type": "click",
+      "start": 17.510799884796143,
+      "at": {
+        "x": 489,
+        "y": 335
+      },
+      "segment": 1
+    },
+    {
+      "type": "click",
+      "start": 20.576299905776978,
+      "at": {
+        "x": 363,
+        "y": 275
+      },
+      "segment": 1
+    },
+    {
+      "type": "click",
+      "start": 21.67459988594055,
+      "at": {
+        "x": 647,
+        "y": 395
+      },
+      "segment": 1
+    }
+  ],
+  "segments": [
+    {
+      "index": 1,
+      "raw": "raw/segment-1.mp4",
+      "start": 0,
+      "status": "verified",
+      "synchronized": true,
+      "elapsed": 23.9993999004364,
+      "sourceOffset": 0.7,
+      "duration": 23.966666666666665,
+      "file": "segments/segment-1.mp4",
+      "sourceFps": 30
+    }
+  ],
+  "pageErrors": [],
+  "ignoredPageErrors": [],
+  "framing": [],
+  "interventions": [],
+  "timing": {
+    "method": "decoded magenta slate per segment; browser performance clock for events",
+    "toleranceSeconds": 0.2
+  },
+  "duration": 23.966666666666665,
+  "finishedAt": "2026-09-29T23:11:44.702Z"
+}
