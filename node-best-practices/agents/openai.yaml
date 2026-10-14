@@ -1,0 +1,4 @@
+interface:
+  display_name: "Node.js Best Practices"
+  short_description: "Choose Node built-ins and migrate dependencies safely"
+  default_prompt: "Use $node-best-practices to review this project's Node.js dependencies and apply suitable built-in APIs while preserving behavior and runtime compatibility."

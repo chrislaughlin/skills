@@ -6,6 +6,7 @@ Personal agent skillset.
 
 | Skill | Description | Trigger Keywords |
 |-------|-------------|---------------|
+| [node-best-practices](./node-best-practices/) | Choose Node.js built-ins and migrate unnecessary dependencies while preserving behavior and runtime compatibility | Node best practices, Node built-ins, replace npm dependency, native Node APIs |
 | [npm-package-audit](./npm-package-audit/) | Audit npm packages before installation with supply-chain, provenance, maintainer, dependency, CI, code-quality, and vulnerability checks | npm audit, package audit, evaluate package, vet package, inspect package, review package, install npm package |
 | [project-timeline-generator](./project-timeline-generator/) | Generate project summaries and Excalidraw timelines from Claude, Codex, OpenCode, or Cursor sessions | project summary, generate timeline, session history, project overview, visualize project sessions |
 | [prompt-starter-all-in](./prompt-starter-all-in/) | Comprehensive operating guide for coding and repository tasks | prompt starter, search, autonomy, implementation, planning, frontend, final reporting |
@@ -33,6 +34,12 @@ To generate a project timeline:
 ```
 skills/
 ├── README.md
+├── node-best-practices/
+│   ├── SKILL.md
+│   ├── agents/
+│   │   └── openai.yaml
+│   └── references/
+│       └── builtins.md
 ├── npm-package-audit/
 │   ├── SKILL.md
 │   └── references/
