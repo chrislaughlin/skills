@@ -13,6 +13,7 @@ Personal agent skillset.
 | [record-app-demo-hyperframes](./record-app-demo-hyperframes/) | Turn ordinary instructions for a running web app into a verified browser recording and HyperFrames tutorial MP4; includes scripts, pinned dependencies, examples and tests | HyperFrames app demo, record product walkthrough, verified UI tutorial |
 | [record-app-demo-remotion](./record-app-demo-remotion/) | Turn ordinary instructions for a running web app into a verified Remotion tutorial MP4, with iframe targets, fast rehearsal, one-command delivery and review sheets | Remotion app demo, record product walkthrough, verified UI tutorial |
 | [record-app-demo-agent-browser-remotion](./record-app-demo-agent-browser-remotion/) | Orchestrate and record a real app with agent-browser, render with Remotion, and pause/resume for human resolution; supports env-file auth and saved state | agent-browser Remotion demo, checkpoint walkthrough, product recording |
+| [release-notes-video](./release-notes-video/) | Generate animated showcase videos for software release notes from a description. Creates HyperFrames HTML compositions that mock relevant UIs from scratch, then renders a local MP4. | release notes video, changelog animation, feature showcase video, release note demo |
 
 ## Usage
 
@@ -71,6 +72,15 @@ skills/
 │   ├── examples/
 │   ├── evals/
 │   └── tests/
+├── release-notes-video/
+│   ├── SKILL.md
+│   ├── agents/
+│   │   └── openai.yaml
+│   ├── examples/
+│   │   ├── cli-feature/
+│   │   ├── slack-integration/
+│   │   └── ci-improvement/
+│   └── README.md
 └── prompt-starter-all-in/
     ├── SKILL.md
     └── agents/
@@ -94,3 +104,13 @@ Use `$record-app-demo-remotion` for the equivalent Remotion workflow. Copy the e
 Use `$record-app-demo-agent-browser-remotion` to operate the application through agent-browser and retain the Remotion presentation. Supply the same URL and ordinary instructions, plus optional credentials or an env-file path. This separate skill requires Node 22.9+, FFmpeg/ffprobe and agent-browser-managed Chrome; its own package pins agent-browser 0.38.1. It prompts on ambiguous UI choices and resumes verified footage in the same session. See its [journey/resume contract](./record-app-demo-agent-browser-remotion/references/journey.md) and [authentication inputs](./record-app-demo-agent-browser-remotion/references/authentication.md).
 
 The included validation covers six operations on the hosted TodoMVC React and Vue examples and a 44-second, 1080p output from each renderer. It also found and blocked an unsupported persistence claim. This is a working browser-demo foundation; authentication, unrelated applications, complex editors and unattended production services require further validation. See each skill's `references/todomvc-validation.md` for the measured comparison and limits.
+
+## Release notes video skill
+
+[release-notes-video](./release-notes-video/) generates short animated showcase videos directly from a release note description. It creates HyperFrames HTML compositions that mock the relevant UI (terminal, Slack, GitHub CI, dashboards, etc.) from scratch, then renders a local MP4. No pre-canned scenes or paid video services required.
+
+Example request:
+
+> Use $release-notes-video to turn this release note into a 20-second showcase video: "New CLI command `app deploy --preview` that instantly creates a shareable preview environment and prints the URL."
+
+The skill includes three ready-to-render example compositions (CLI, Slack, CI) based on fake release notes. Requires Node 22+ and FFmpeg. Copy the whole `release-notes-video` folder into your agent's skills directory.
