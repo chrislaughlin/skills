@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CI Improvement — Release Notes</title>
+  <style>
+    body { margin: 0; background: #0d1117; color: #e6edf3; font-family: system-ui, sans-serif; display: grid; place-items: center; height: 100vh; }
+    .card { width: 560px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; }
+    .title { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+    .check { display: flex; align-items: center; gap: 10px; padding: 8px 0; opacity: 0; animation: appear 0.4s forwards; }
+    .check:nth-child(2) { animation-delay: 0.6s; }
+    .check:nth-child(3) { animation-delay: 1.2s; }
+    .check:nth-child(4) { animation-delay: 1.8s; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: #3fb950; }
+    .pending .dot { background: #d29922; }
+    h1 { position: absolute; top: 40px; left: 50%; transform: translateX(-50%); font-size: 26px; font-weight: 600; margin: 0; opacity: 0; animation: fade 0.5s 0.1s forwards; }
+    @keyframes appear { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
+    @keyframes fade { to { opacity: 1; } }
+  </style>
+</head>
+<body>
+  <h1>Faster CI: parallel checks</h1>
+  <div class="card" data-start="0" data-duration="8">
+    <div class="title">Pull request #142 · All checks passed</div>
+    <div class="check"><div class="dot"></div> lint</div>
+    <div class="check"><div class="dot"></div> unit tests</div>
+    <div class="check"><div class="dot"></div> e2e (preview)</div>
+    <div class="check pending"><div class="dot"></div> deploy preview</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Slack Integration — Release Notes</title>
+  <style>
+    body { margin: 0; background: #1a1d21; color: #d1d2d3; font-family: system-ui, -apple-system, sans-serif; display: grid; place-items: center; height: 100vh; }
+    .slack { width: 480px; background: #222529; border-radius: 8px; padding: 16px; box-shadow: 0 12px 40px rgba(0,0,0,.4); }
+    .msg { display: flex; gap: 12px; opacity: 0; animation: pop 0.5s 0.4s forwards; }
+    .avatar { width: 36px; height: 36px; border-radius: 4px; background: #4a154b; display: grid; place-items: center; font-weight: 700; color: white; }
+    .meta { font-size: 13px; color: #9a9b9c; margin-bottom: 4px; }
+    .text { font-size: 15px; }
+    .badge { display: inline-block; background: #007a5a; color: white; font-size: 11px; padding: 2px 6px; border-radius: 4px; margin-left: 6px; }
+    h1 { position: absolute; top: 48px; left: 50%; transform: translateX(-50%); font-size: 26px; font-weight: 600; margin: 0; opacity: 0; animation: fade 0.5s forwards; }
+    @keyframes pop { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    @keyframes fade { to { opacity: 1; } }
+  </style>
+</head>
+<body>
+  <h1>Slack: real-time deploy alerts</h1>
+  <div class="slack" data-start="0" data-duration="7">
+    <div class="msg">
+      <div class="avatar">A</div>
+      <div>
+        <div class="meta">app-bot <span class="badge">NEW</span> · just now</div>
+        <div class="text">🚀 Preview ready for PR #142<br><span style="color:#79c0ff">https://preview-abc123.app.dev</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

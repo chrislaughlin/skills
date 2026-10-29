@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release Notes Video"
+  short_description: "Generate animated showcase videos from release note descriptions using HyperFrames"
+  default_prompt: "Use $release-notes-video to turn this release note item into a short animated showcase video. Generate the UI mock from the description and render a local MP4."
